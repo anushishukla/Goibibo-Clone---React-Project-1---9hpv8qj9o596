@@ -1,0 +1,90 @@
+
+.wave {
+  display: block;
+  position: relative;
+  height: 300px;
+  width: 100%;
+  background: orange;
+  transform: scale(1, 1);
+}
+
+.header-item {
+  display: flex;
+  justify-content: space-between;
+}
+.ticket-booking {
+  color: white;
+  margin-left: 15%;
+  padding-top: 10px;
+  font-size: 24px;
+}
+.ticket-booking-1 {
+  color: white;
+  padding-bottom: 10px;
+  font-size: 24px;
+}
+.img-div{
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  padding-left: 10px;
+  padding-top: 5px;
+  margin-left: 30%;
+  margin-top: 20px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.content {
+  width: 75%;
+  height: 220px;
+  background-color: white;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px #eddddd;
+}
+.content-data {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  gap: 15px;
+}
+.content-data-top {
+  display: flex;
+  gap: 25px;
+  font-size: 16px;
+}
+.train-part-bottom {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding-top: 6%;
+}
+.main-part-1 {
+  font-size: 28px;
+  font-weight: 800;
+}
+.outer-part {
+  display: flex;
+}
+.first {
+  padding-top: 40px;
+  margin-left: 10%;
+}
+.one {
+  font-size: 22px;
+  font-weight: 750;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-right: 20px;
+}
+.two {
+  font-size: 14px;
+  padding-right: 30px;
+  margin-top: 5px;
+}
+.hotel-part-top {
+  display: flex;
+}

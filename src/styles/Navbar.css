@@ -1,0 +1,55 @@
+.nav-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+}
+.website-name {
+  font-size: 34px;
+  font-weight: 700;
+  color: rgb(24, 24, 182);
+  margin-left: 30px;
+  margin-bottom: 10px;
+  border: none;
+}
+
+.website-name a {
+  text-decoration: none;
+}
+
+.website-name span {
+  color: orange;
+}
+.nav-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  color: gray;
+  margin: 0 16px;
+}
+.myTrip-nav-item {
+  font-weight: 500;
+  color: gray;
+  margin: 0 16px;
+}
+.login-signup {
+  padding: 15px;
+  border-radius: 10px;
+  border-color: blue;
+  color: blue;
+  background-color: white;
+}
+.nav-items img {
+  height: 20px;
+  width: 20px;
+}
+
+.navbar {
+  display: flex;
+  list-style: none;
+}
+
+.nav-items a {
+  text-decoration: none;
+}

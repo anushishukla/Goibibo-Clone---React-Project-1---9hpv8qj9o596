@@ -1,0 +1,112 @@
+.hotel-bg {
+  
+  background-color: rgb(81, 81, 235);
+  width: 150vh;
+  height: 65vh;
+  border-radius: 0 0 150vh 150vh;
+  margin-left: -10vh;
+  position: absolute;
+}
+.hotel-page {
+  position: relative;
+  width: 150vh;
+  margin-left: -10vh;
+}
+.hotel-item {
+  color: white;
+  padding-top: 10px;
+  font-weight: 700;
+  font-size: 22px;
+}
+.card-hotel {
+  width: 600px;
+  height: 350px;
+  border-radius: 10px;
+  background-color: white;
+  margin-left: 15%;
+  margin-top: 25px;
+  box-shadow: 2px 2px 2px ;
+}
+.content-data-top {
+  display: flex;
+  color: gray;
+  padding-top: 15px;
+  padding-left: 15px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.item {
+  color: gray;
+  margin-left: 30px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.item-cards{
+  display: flex;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 10px
+}
+.item-cards-1{
+  color: gray;
+  margin-left: 30px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.item-cards-2{
+  color: black;
+  margin-left: 30px;
+ font-weight: 500;
+ margin-top: 10px;
+  font-size: 14px;
+  font-weight: 700;
+
+}
+.checkin{
+  display: flex;
+  justify-content: space-between;
+}
+.first-part{
+  display: flex;
+}
+.button{
+  margin-top: 20px;
+  background-color: rgb(219, 229, 233);
+  border-radius: 20px;
+  height: 30px;
+  width: 80px;
+  text-align: center;
+ padding-top: 6px;
+ font-size: 14px;
+}
+.second{
+  margin-right: 45px;
+}
+.item-cards-3{
+  color: gray;
+  margin-left: 30px;
+  margin-top: 35px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.item-cards img {
+  height: 40px;
+  width: 50px;
+}
+.hotel-part-top{
+  gap: 20px;
+}
+.cards{
+  background-color: white;
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  color: gray;
+}
+.cards img{
+  width: 300px;
+  height: 100px;
+  border-radius: 10px;
+}
