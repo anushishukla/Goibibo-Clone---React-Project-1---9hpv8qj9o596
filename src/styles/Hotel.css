@@ -31,7 +31,7 @@
   display: flex;
   color: gray;
   padding-top: 15px;
-  padding-left: 15px;
+  padding-left: 25px;
   font-size: 18px;
   font-weight: 700;
 }
@@ -104,6 +104,7 @@
   height: 200px;
   border-radius: 10px;
   color: gray;
+  /* margin-left: 40px; */
 }
 .cards img{
   width: 300px;

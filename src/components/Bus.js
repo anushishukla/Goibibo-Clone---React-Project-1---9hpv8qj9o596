@@ -11,8 +11,8 @@ const Bus = () => {
           </p>
           <div className="hotel-part-top">
             <div className="bus-item-1">
-              <div className="card-hotel">
-                <div className="content-data-top">
+              <div className="card-bus">
+                <div className="content-data-1">
                   <div>
                     <div className="form-1">
                       <div className="text">FROM</div>
@@ -65,13 +65,23 @@ const Bus = () => {
                 </div>
               </div>
               <div className="bus-item-2">
-                <div className="green-div"></div>
+                <div className="green-div">
+
+                  <div className="vaccine-img"> 
+                   
+                  <div className="vaccine-div">
+                  <img  src="https://gos3.ibcdn.com/vacc-1642578631.png"/>
+                    Buses with vaccination Mandatory</div>
+                <div className="paragraph">Travel on buses that mandate covid vaccination </div>
+                </div>
+                </div>
+               
                 <div className="blue-div">
-                  <div className="cards">
+                  <div className="bus-card-page" style={{backgroundColor:"white", borderRadius:"20px"}}>
                     <img src="https://gos3.ibcdn.com/img-1701838393.jpg" />
                     <div
                       className="part-1"
-                      style={{ marginLeft: "20px", fontWeight: "500" }}
+                      style={{ marginLeft: "30px", fontWeight: "500" }}
                     >
                       Up to 20% OFF* on bookings.
                       <br />
@@ -79,20 +89,21 @@ const Bus = () => {
                     <div
                       className="part-2"
                       style={{
-                        marginLeft: "20px",
+                        marginLeft: "30px",
                         fontSize: "14px",
                         marginTop: "10px",
+                        paddingBottom: "20px"
                       }}
                     >
                       Valid till: Limited Period Offer
                     </div>
                   </div>
 
-                  <div className="cards">
+                  <div className="bus-card-page" style={{backgroundColor:"white", borderRadius:"20px"}}>
                     <img src="https://gos3.ibcdn.com/img-1705898510.jpg" />
                     <div
                       className="part-1"
-                      style={{ marginLeft: "20px", fontWeight: "500" }}
+                      style={{ marginLeft: "30px", fontWeight: "500" }}
                     >
                       Up to 20% OFF* on bookings.
                       <br />
@@ -100,7 +111,7 @@ const Bus = () => {
                     <div
                       className="part-2"
                       style={{
-                        marginLeft: "20px",
+                        marginLeft: "30px",
                         fontSize: "14px",
                         marginTop: "10px",
                       }}

@@ -15,6 +15,7 @@ export default function SearchTextField(props) {
   const handleChange = (event, value) => {
     // setSelectAirport(value.iata_code);
     sendDataToParent(value.iata_code);
+  
   };
 
   const sendDataToParent = (value) => {

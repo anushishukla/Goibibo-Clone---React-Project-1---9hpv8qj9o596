@@ -2,20 +2,59 @@ import React, { useState, useEffect } from "react";
 import "../styles/Home.css";
 import Offers from "./Offers";
 import SearchTextField from "./UI Components/SearchBox";
+import { useNavigate } from "react-router-dom";
 const Flight = () => {
   const [airports, setAirports] = useState([]);
+  const [flight, setFlight] = useState([]);
+  const [day, setDay] = useState("");
+
+  const [selectedDate, setSelectedDate] = useState("");
 
   const [sourceAirport, setSourceAirport] = useState("");
   const [destinationAirport, setDestinationAirport] = useState("");
 
+  const today = new Date().toISOString().split("T")[0];
+
+  const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
   const handleSourceAirport = (airport_name) => {
-    handleCheckAirports(airport_name, destinationAirport);
+    // handleCheckAirports(airport_name, destinationAirport);
     setSourceAirport(airport_name);
+    console.log(sourceAirport);
   };
 
   const handleDestinationAirport = (airport_name) => {
-    handleCheckAirports(sourceAirport, airport_name);
+    // handleCheckAirports(sourceAirport, airport_name);
     setDestinationAirport(airport_name);
+    console.log(destinationAirport);
+  };
+
+  const handleDateChange = (event) => {
+    console.log(event.target.value)
+    setSelectedDate(event.target.value);
+  };
+
+  const flightSearch = async () => {
+    const dateObject = new Date(selectedDate);
+
+    const dayOfWeek = dateObject.getDay();
+    const dayName = daysOfWeek[dayOfWeek];
+    setDay(dayName);
+    console.log("dayName =",day)
+    console.log("soureceAirport =",sourceAirport)
+    console.log("destination Airport =",destinationAirport)
+
+
+    const response = await fetch(
+      `https://academics.newtonschool.co/api/v1/bookingportals/flight?search={"source":"Del","destination":"Bom"}&day=Mon`,
+      {
+        headers: { projectID: "9hpv8qj9o596" },
+      }
+    );
+    const results = await response.json();
+    console.log(results);
+
+    // setFlight(results.data.flights);
   };
 
   const fetchAirpots = async () => {
@@ -30,6 +69,12 @@ const Flight = () => {
 
     setAirports(results.data.airports);
   };
+  const navigate = useNavigate()
+
+  const Flight = () => {
+      flightSearch();
+    navigate("/searchFlight")
+  }
 
   useEffect(() => {
     fetchAirpots();
@@ -70,7 +115,7 @@ const Flight = () => {
                 </div>
               </div>
               <div className="content-data-mid">
-                <div style={{width:"50%"}}>
+                <div style={{ width: "35%", paddingLeft: "20px" }}>
                   <SearchTextField
                     label="From"
                     placeholder="Enter city or airport"
@@ -78,7 +123,7 @@ const Flight = () => {
                     onSearchData={handleSourceAirport}
                   />
                 </div>
-                <div style={{width:"50%"}}>
+                <div style={{ width: "35%", paddingLeft: "20px" }}>
                   <SearchTextField
                     label="To"
                     placeholder="Enter city or airport"
@@ -86,6 +131,24 @@ const Flight = () => {
                     onSearchData={handleDestinationAirport}
                   />
                 </div>
+                <div style={{ width: "20%", paddingLeft: "20px" }}>
+                  <input
+                    type="date"
+                    id="dateInput"
+                    value={selectedDate}
+                    onChange={handleDateChange}
+                    min={today}
+                  />
+                </div>
+
+                {/* <div style={{ width: "20%", paddingLeft: "20px" }}>
+                  <SearchTextField
+                    label="Return"
+                    placeholder="14 Feb'2024"
+                    data={lastdate}
+                    onSearchData={handleSourceAirport}
+                  />
+                </div> */}
               </div>
               <div className="content-data-lower">
                 <div>
@@ -135,7 +198,12 @@ const Flight = () => {
               </div>
             </div>
           </div>
-          <div className="search-flights">SEARCH FLIGHTS</div>
+          <div className="search-flights" onClick={Flight}>
+            SEARCH FLIGHTS
+          </div>
+
+          <div></div>
+
         </div>
       </div>
 

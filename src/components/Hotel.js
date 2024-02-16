@@ -1,9 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Hotel.css";
 import searchImage from "../assets/search.png";
+
 const Hotel = () => {
+
+  const [location, setLocation] = useState('');
+  const [hotels, setHotels] = useState([])
+
+  const searchHotels = async () => {
+    try {
+      const response = await fetch(`https://academics.newtonschool.co/api/v1/bookingportals/hotel?search={"location":"${location}"}`, {
+        headers: {
+          'Authorization': 'Bearer YOUR_JWT_TOKEN',
+          'projectID': '24a1f8322dd4'
+        }
+      });
+
+      setHotels(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YzBmNWU1Nzc2ZGY2NjJkMTBmOWU3YSIsImlhdCI6MTcwNzE0NDY3NywiZXhwIjoxNzM4NjgwNjc3fQ.yKugSCeH3mYDXSFPh5xlGmgzOu7NZTgFewe0o75MwtQ"
+
   return (
     <>
+      <div>
+      <input
+       type="text"
+        placeholder="Enter city name"
+         value={location}
+          onChange={(e) => setLocation(e.target.value)} />
+
+      <button onClick={searchHotels}>Search </button>
+
+      {hotels.map((hotel) => (
+        <div key={hotel.id}>
+        
+          {hotel.name}, {hotel.location}, {hotel.price}
+        </div>
+      ))}
+    </div>
+  
+
+
+
       <div className="hotel-bg"> </div>
 
       <div className="hotel-page">

@@ -46,12 +46,60 @@
     font-weight: 600;
     padding-left: 10px;
   }
-  .content-data-lower {
+  .search-data {
     display: flex;
     gap: 5px;
     align-items: center;
   }
-  .profession {
-    padding: 10px;
-   
+  .profession-search {
+    margin-left: 40px;
+   color: white;
+   font-size: 16px;
+   margin-top: 30px;
+  }
+  .flight-container{
+    height: 200px;
+    width: 60%;
+    background-color: lightgrey;
+    border-radius: 10px;
+    margin-top: 10px;
+    align-items: center;
+    margin-left: 35%;
+    
+  }
+  .multi{
+      display: flex;
+      justify-content: space-between;
+  }
+  .delhi-div{
+    display: flex;
+    gap: 10%;
+   margin-left: 20px;
+   color: gray;
+   font-size: 14px;
+  }
+  .time-div{
+    display: flex;
+   gap: 18%;
+   margin-left: 20px;
+   font-weight: 700;
+
+  }
+  .btn{
+    background-color: red;
+    padding: 5px;
+    color: white;
+  }
+  .add-div{
+    display: flex;
+    margin-left: 20px;
+   gap: 18%;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .flight-btn{
+    font-size: 14px;
+    color: blue;
+    margin-left: 85%;
+    margin-top: 10px;
   }

@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Navbar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Navigate, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import flightImage from "../assets/flight.png";
 import hotelImage from "../assets/hotel.png";
@@ -12,6 +12,9 @@ import forexImage from "../assets/forex.png";
 import insauranceImage from "../assets/insaurance.png";
 
 const Navbar = () => {
+
+  const navigate = useNavigate()
+  
   return (
     <nav className="nav-container">
       <span className="website-name">
@@ -67,7 +70,7 @@ const Navbar = () => {
         <br />
         <span style={{ color: "black" }}>Manage Booking</span>
       </div>
-      <button className="login-signup">LOGIN / SIGNUP</button>
+      <button className="login-signup" onClick={() => navigate(`/login`)}>LOGIN / SIGNUP</button>
     </nav>
   );
 };
