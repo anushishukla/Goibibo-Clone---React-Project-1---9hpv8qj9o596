@@ -3,6 +3,7 @@ import "../styles/Home.css";
 import Offers from "./Offers";
 import SearchTextField from "./UI Components/SearchBox";
 import { useNavigate } from "react-router-dom";
+
 const Flight = () => {
   const [airports, setAirports] = useState([]);
   const [flight, setFlight] = useState([]);

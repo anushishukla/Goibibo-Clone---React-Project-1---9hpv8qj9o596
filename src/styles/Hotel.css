@@ -111,3 +111,17 @@
   height: 100px;
   border-radius: 10px;
 }
+.search-hotel{
+  position: relative;
+  width: 200px;
+  border-radius: 25px;
+  background-color: orange;
+  z-index: 2;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  margin-left: 14%;
+  padding: 15px;
+  top: -30px;
+  text-align: center;
+}

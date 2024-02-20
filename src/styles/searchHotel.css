@@ -1,0 +1,152 @@
+.searchhotel-page{
+    background-color: orange;
+    width: 300vh;
+    height: 100px;
+}
+.nav-search{
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    gap: 5%;
+   padding-top: 10px;
+}
+.five-divs{
+    display: flex;
+    
+}
+.f1{
+    background-color: white;
+    border-radius: 10px;
+    width: 300px;
+    height: 40px;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+.f2{
+    background-color: white;
+    border-radius: 10px;
+    width: 180px;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 10px;
+    font-weight: 700;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.f3{
+    background-color: white;
+    border-radius: 10px;
+    width: 180px;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 10px;
+    font-weight: 700;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.f4 {
+    background-color: white;
+    border-radius: 10px;
+    width: 210px;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 10px;
+    font-weight: 700;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.f5{
+    background-color: white;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+    margin-left: 80px;
+    margin-top: 10px;
+    color: blue;
+    font-weight: 700;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 10px;
+}
+.other-divs{
+    display: flex;
+}
+.d1{
+    margin-left: 30px;
+    font-weight: 700;
+    margin-top: 10px;
+    
+}
+.d2{
+    margin-left: 10px;
+    border: 1px solid blue;
+    color: blue;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 5px;
+    margin-top: 8px;
+    font-size: 15px;
+}
+.d3{
+    margin-left: 10px;
+    border: 1px solid blue;
+    color: blue;
+    width: 180px;
+    height: 30px;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 5px;
+    margin-top: 8px;
+    font-size: 15px;
+
+}
+.d4{
+    margin-left: 10px;
+    border: 1px solid blue;
+    color: blue;
+    width: 180px;
+    height: 30px;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 5px;
+    margin-top: 8px;
+    font-size: 15px;
+
+}
+.d5{
+    margin-left: 10px;
+    font-weight: 700;
+    color: blue;
+    width: 180px;
+    height: 30px;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 5px;
+    background-color: skyblue;
+    margin-top: 8px;
+    font-size: 15px;
+
+}
+.d6{
+    display: flex;
+    margin-left: 15%;
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 5px;
+    background-color: rgb(203, 224, 233);
+     margin-top: 8px;
+    color: black;
+    font-size: 15px;
+
+}
+.d6 img{
+    width: 20px;
+    height: 20px;
+    padding-right: 15px;
+    padding-left: 10px;
+}

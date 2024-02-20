@@ -1,51 +1,35 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import "../styles/Hotel.css";
 import searchImage from "../assets/search.png";
+import { useNavigate } from "react-router-dom";
+
 
 const Hotel = () => {
+  const[hotel,setHotel] = useState("")
 
-  const [location, setLocation] = useState('');
-  const [hotels, setHotels] = useState([])
+  const hotelSearch = async () => {
+    const response = await fetch(
+      `https://academics.newtonschool.co/api/v1/bookingportals/hotel?search={"location":"add_any_city_name"}`,
+      {
+        headers: { projectID: "9hpv8qj9o596" },
+      }
+    );
+    const results = await response.json();
+    console.log(results);
 
-  const searchHotels = async () => {
-    try {
-      const response = await fetch(`https://academics.newtonschool.co/api/v1/bookingportals/hotel?search={"location":"${location}"}`, {
-        headers: {
-          'Authorization': 'Bearer YOUR_JWT_TOKEN',
-          'projectID': '24a1f8322dd4'
-        }
-      });
+    setHotel(results.data.hotels);
 
-      setHotels(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  }
+  const navigate = useNavigate();
 
-  // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YzBmNWU1Nzc2ZGY2NjJkMTBmOWU3YSIsImlhdCI6MTcwNzE0NDY3NywiZXhwIjoxNzM4NjgwNjc3fQ.yKugSCeH3mYDXSFPh5xlGmgzOu7NZTgFewe0o75MwtQ"
+   const Hotels = () => {
+      hotelSearch();
+      navigate("/searchHotels")
+   }
+  
 
   return (
     <>
-      <div>
-      <input
-       type="text"
-        placeholder="Enter city name"
-         value={location}
-          onChange={(e) => setLocation(e.target.value)} />
-
-      <button onClick={searchHotels}>Search </button>
-
-      {hotels.map((hotel) => (
-        <div key={hotel.id}>
-        
-          {hotel.name}, {hotel.location}, {hotel.price}
-        </div>
-      ))}
-    </div>
-  
-
-
-
       <div className="hotel-bg"> </div>
 
       <div className="hotel-page">
@@ -126,10 +110,74 @@ const Hotel = () => {
               Valid till: Limited Period Offer
             </div>
           </div>
+
         </div>
+
       </div>
+      <button className="search-hotel" onClick={Hotels} >SEARCH </button>
+
     </>
   );
 };
 
 export default Hotel;
+
+
+
+
+
+
+
+
+// const [searchParams, setSearchParams] = useState({
+//   location: "",
+
+//   checkInDate: "",
+
+//   checkOutDate: "",
+
+//   guests: 1,
+
+//   rooms: 1,
+// });
+
+// const [hotels, setHotels] = useState([]);
+
+// const [loading, setLoading] = useState(false);
+
+// const navigate = useNavigate();
+
+// useEffect(() => {
+//   if (searchParams.location) {
+//     fetchHotels();
+//   }
+// }, [searchParams]);
+
+// const fetchHotels = async () => {
+//   setLoading(true);
+
+//   try {
+//     const response = await fetch(
+//       `https://academics.newtonschool.co/api/v1/bookingportals/hotel?search={"location":"${searchParams.location}"}`,
+//       {
+//         headers: { projectID: "yourProjectID" },
+//       }
+//     );
+
+//     const data = await response.json();
+
+//     setHotels(data.hotels || []);
+//   } catch (error) {
+//     console.error("Error fetching hotels:", error);
+
+//     // Handle the error appropriately in your UI
+//   } finally {
+//     setLoading(false);
+//   }
+// };
+
+// const handleSearch = (newSearchParams) => {
+//   console.log(newSearchParams)
+//   setSearchParams(newSearchParams);
+  
+// };

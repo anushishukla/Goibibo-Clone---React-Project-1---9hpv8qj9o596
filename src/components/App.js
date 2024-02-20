@@ -8,6 +8,7 @@ import Bus from "./Bus";
 import Train from "./Train";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Login from "./Login";
+import SearchHotel from "./searchHotels";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         <Route  path="/train" element={<Train />}/>
         <Route  path="/login" element={<Login />}/>
         <Route  path="/searchflight" element={<SearchFlight />}/>
+        <Route  path="/searchhotels" element={<SearchHotel />}/>
+
 
       </Routes>
       </>
