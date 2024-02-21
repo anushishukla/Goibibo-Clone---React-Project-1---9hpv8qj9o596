@@ -35,6 +35,69 @@ const SearchHotel = () => {
               <div> <img src={SearchImage} /></div>
               Search Location or Property Name</div>
            </div>
+
+           <div className="sidebar-div">
+
+            <div className="filter-div">
+               <div className="filter-1">FILTERS</div>
+               <div className="filter-2">CLEAR</div>
+            </div>
+            
+            <div className="p-div">
+            <h4>Popular Filters</h4>
+            <p style={{fontSize:"14px"}}>Couple-friendly Stays</p>
+            <p style={{fontSize:"14px"}}>Top Rated Affordable Properties</p>
+            <p style={{fontSize:"14px"}}>Book @</p>
+            <p style={{fontSize:"14px"}}>Free Cancellation Available</p>
+            <p style={{fontSize:"14px"}}>Free Breakfast Included</p>
+            </div>
+
+            <div className="p-div">
+            <h4>Previously used Filters</h4>
+            <p style={{fontSize:"14px"}}>Top Rated Affordable Properties</p>
+            <p style={{fontSize:"14px"}}>Free Breakfast Included</p>
+            <p style={{fontSize:"14px"}}>ree Cancellation Available</p>
+            <p style={{fontSize:"14px"}}>Book @ ₹0</p>
+            <p style={{fontSize:"14px"}}>Couple-friendly Stays</p>
+            </div>
+
+            <div className="p-div">
+            <h4>Price Range</h4>
+            <p style={{fontSize:"14px"}}>Upto ₹2000</p>
+            <p style={{fontSize:"14px"}}>₹2001 - ₹4000</p>
+            <p style={{fontSize:"14px"}}>Book @</p>
+            <p style={{fontSize:"14px"}}>₹4001 - ₹6000</p>
+            <p style={{fontSize:"14px"}}>₹6000 +</p>
+            </div>
+
+            <div className="p-div">
+            <h4>Customer Ratings</h4>
+            <p style={{fontSize:"14px", backgroundColor:"lightgreen", width:"30px", padding:"5px"}}>4.5+</p>
+            <p style={{fontSize:"14px", backgroundColor:"lightgreen", width:"30px", padding:"5px"}}>4+</p>
+            <p style={{fontSize:"14px", backgroundColor:"lightgreen", width:"30px", padding:"5px"}}>3.5+</p>
+            <p style={{fontSize:"14px", backgroundColor:"lightgreen", width:"30px", padding:"5px"}}>3+</p>
+           
+            </div>
+
+            <div className="p-div">
+            <h4>Popular Locations</h4>
+            <p style={{fontSize:"14px"}}>Karol bagh</p>
+            <p style={{fontSize:"14px"}}>Lajpat Nagar</p>
+            <p style={{fontSize:"14px"}}>Mehrauli</p>
+            <p style={{fontSize:"14px", color:"blue"}}>Show All</p>
+           
+            </div>
+
+            <div className="p-div">
+            <h4>Star Rating</h4>
+            <div style={{fontSize:"14px", color:"gold", fontWeight:"800", fontSize:"28px"}}>*****</div>
+            <div style={{fontSize:"14px",color:"gold", fontWeight:"800", fontSize:"28px"}}>****</div>
+            <div style={{fontSize:"14px",color:"gold", fontWeight:"800", fontSize:"28px"}}>***</div>
+            <p style={{fontSize:"14px", color:"blue"}}>Show All</p>
+           
+            </div>
+
+           </div>
         </>
     )
 }

@@ -150,3 +150,30 @@
     padding-right: 15px;
     padding-left: 10px;
 }
+.sidebar-div{
+    width: 280px;
+    height:fit-content;
+    background-color: rgb(243, 232, 232);
+    border-radius: 10px;
+    margin-left: 50px;
+    margin-top: 30px;
+
+}
+.filter-div{
+    display: flex;
+}
+.filter-1{
+    font-weight: 600;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.filter-2{
+    
+    margin-left: 45%;
+    margin-top: 20px;
+    font-size: 14px;
+    color: blue;
+}
+.p-div{
+    margin-left: 30px;
+}
