@@ -17,6 +17,14 @@ const Flight = () => {
   const today = new Date().toISOString().split("T")[0];
 
   const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const [flightSearchData, setFlightSearchData] = useState([]);
+
+  const handleFlightSearchData = (fff) => {
+    // handleCheckAirports(airport_name, destinationAirport);
+    setFlightSearchData(fff);
+    //console.log(flightSearchData);
+    console.log(flight);
+  };
 
   const handleSourceAirport = (airport_name) => {
     // handleCheckAirports(airport_name, destinationAirport);
@@ -31,7 +39,7 @@ const Flight = () => {
   };
 
   const handleDateChange = (event) => {
-    console.log(event.target.value)
+    console.log(event.target.value);
     setSelectedDate(event.target.value);
   };
 
@@ -41,10 +49,9 @@ const Flight = () => {
     const dayOfWeek = dateObject.getDay();
     const dayName = daysOfWeek[dayOfWeek];
     setDay(dayName);
-    console.log("dayName =",day)
-    console.log("soureceAirport =",sourceAirport)
-    console.log("destination Airport =",destinationAirport)
-
+    console.log("dayName =", day);
+    console.log("soureceAirport =", sourceAirport);
+    console.log("destination Airport =", destinationAirport);
 
     const response = await fetch(
       `https://academics.newtonschool.co/api/v1/bookingportals/flight?search={"source":"Del","destination":"Bom"}&day=Mon`,
@@ -53,9 +60,10 @@ const Flight = () => {
       }
     );
     const results = await response.json();
-    console.log(results);
 
-    // setFlight(results.data.flights);
+    console.log(results);
+    handleFlightSearchData(results);
+    setFlight(results.data.flights);
   };
 
   const fetchAirpots = async () => {
@@ -70,12 +78,21 @@ const Flight = () => {
 
     setAirports(results.data.airports);
   };
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const Flight = () => {
-      flightSearch();
-    navigate("/searchFlight")
-  }
+    flightSearch();
+    // navigate("/searchFlight")
+    //transferring data to searchflight
+    navigate("/searchFlight", {
+      state: {
+        airports: airports,
+        sourceAirport: sourceAirport,
+        destinationAirport: destinationAirport,
+        day: day,
+      },
+    });
+  };
 
   useEffect(() => {
     fetchAirpots();
@@ -116,7 +133,7 @@ const Flight = () => {
                 </div>
               </div>
               <div className="content-data-mid">
-                <div style={{ width: "35%", paddingLeft: "20px" }}>
+                <div>
                   <SearchTextField
                     label="From"
                     placeholder="Enter city or airport"
@@ -132,7 +149,7 @@ const Flight = () => {
                     onSearchData={handleDestinationAirport}
                   />
                 </div>
-                <div style={{ width: "20%", paddingLeft: "20px" }}>
+                <div style={{ width: "40px" }}>
                   <input
                     type="date"
                     id="dateInput"
@@ -204,7 +221,6 @@ const Flight = () => {
           </div>
 
           <div></div>
-
         </div>
       </div>
 

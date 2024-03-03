@@ -9,7 +9,7 @@ const Hotel = () => {
 
   const hotelSearch = async () => {
     const response = await fetch(
-      `https://academics.newtonschool.co/api/v1/bookingportals/hotel?search={"location":"add_any_city_name"}`,
+      `https://academics.newtonschool.co/api/v1/bookingportals/hotel?search={"location":"Del"}`,
       {
         headers: { projectID: "9hpv8qj9o596" },
       }
