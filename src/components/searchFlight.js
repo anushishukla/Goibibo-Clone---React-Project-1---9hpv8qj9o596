@@ -13,6 +13,9 @@ const SearchFlight = () => {
     destination: location.state.destinationAirport,
   };
   console.log(searchData);
+  console.log("sourceValue",searchData.source)
+  console.log("destinationValue",searchData.destination)
+
   const [destinationAirport, setDestinationAirport] = useState("");
   const handleDestinationAirport = (airport_name) => {
     // handleCheckAirports(sourceAirport, airport_name);
@@ -77,6 +80,12 @@ const SearchFlight = () => {
       // },
     });
   };
+
+  const flightDetails = () => {
+    navigate("/flight details", {
+      
+    })
+  }
 
   useEffect(() => {
     flightSearch();
@@ -201,7 +210,7 @@ const SearchFlight = () => {
         </div>
       </div>
 
-      {/* <div>
+      <div>
         <div>
           {flight.length > 0 ? (
             flight.map((item) => (
@@ -223,19 +232,19 @@ const SearchFlight = () => {
 
                   <div className="delhi-div">
                     <div style={{ marginBottom: "20px" }}>
-                      DEL
-                      <span style={{ fontSize: "12px", color: "grey" }}>
+                     {item.source}
+                      {/* <span style={{ fontSize: "12px", color: "grey" }}>
                         {" "}
                         New Delhi India
-                      </span>
+                      </span> */}
                     </div>
-                    <div>-GAU-BLR-</div>
+                    <div>{item.source}-{item.destination}</div>
                     <div>
-                      GOI{" "}
-                      <span style={{ fontSize: "12px", color: "grey" }}>
+                     {item.destination}
+                      {/* <span style={{ fontSize: "12px", color: "grey" }}>
                         Goa - Dabolim <br />
                         Airport, India
-                      </span>
+                      </span> */}
                     </div>
                     <div
                       style={{ marginLeft: "17%", marginTop: "20px" }}
@@ -246,10 +255,11 @@ const SearchFlight = () => {
                   </div>
 
                   <div className="time-div">
-                    <div>07:20</div>
-                    <div>9h 45m</div>
-                    <div>17:05</div>
-                    <div>6,639</div>
+
+                    <div>{item.arrivalTime}</div>
+                    <div>{item.duration}</div>
+                    <div>{item.departureTime}</div>
+                    <div>{item.ticketPrice}</div>
                   </div>
 
                   <div className="add-div">
@@ -261,7 +271,7 @@ const SearchFlight = () => {
                     </div>
                   </div>
 
-                  <div className="flight-btn">Flight Details</div>
+                  <div className="flight-btn" onClick={flightDetails}>Flight Details</div>
                 </div>
               </div>
             ))
@@ -269,7 +279,7 @@ const SearchFlight = () => {
             <p>No flights available</p>
           )}
         </div>
-      </div> */}
+      </div>
     </>
   );
 };

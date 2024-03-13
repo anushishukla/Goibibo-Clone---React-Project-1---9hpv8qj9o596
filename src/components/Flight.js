@@ -133,7 +133,7 @@ const Flight = () => {
                 </div>
               </div>
               <div className="content-data-mid">
-                <div>
+                <div style={{ width: "35%", paddingLeft: "20px" }}>
                   <SearchTextField
                     label="From"
                     placeholder="Enter city or airport"
