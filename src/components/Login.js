@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {URL, APP_TYPE, PROJECT_ID} from "./Constant"
 import "../styles/Login.css";
+import { Box, Grid, TextField } from "@mui/material";
 
 const Login = () => {
   const [name, setName] = useState("");
@@ -88,6 +89,14 @@ const Login = () => {
   <div >
     <div className="login-2" >
         <div className="login-foot">Login/Signup</div>
+
+        <Box>
+          <Grid>
+            <TextField label="Number" placeholder="enter number" variant="standard" fullWidth required>
+              
+            </TextField>
+          </Grid>
+        </Box>
         <div className="continue">Continue</div>
         
     </div>

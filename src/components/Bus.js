@@ -1,6 +1,29 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import "../styles/Bus.css";
+import { useNavigate } from "react-router-dom";
+// import { TextFields } from "@mui/icons-material";
+import { Box, Grid, TextField } from "@mui/material";
+import BusContext from "./BusContext";
+
+
 const Bus = () => {
+  const [from, setFrom] = useState("");
+  const [to, setTo] = useState("");
+
+
+  const { setSource, setDestination } = useContext(BusContext);
+
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setSource(from);
+    setDestination(to);
+
+    navigate(`/bus/search/${from}-${to}`);
+  };
+
   return (
     <div className="bus-bg-1">
       <div className="bus-bg"> </div>
@@ -12,45 +35,45 @@ const Bus = () => {
           <div className="hotel-part-top">
             <div className="bus-item-1">
               <div className="card-bus">
-                <div className="content-data-1">
-                  <div>
-                    <div className="form-1">
-                      <div className="text">FROM</div>
-                      <div className="source-part">ENTER SOURCE</div>
-                    </div>
+                <form id="busForm" onSubmit={handleSubmit}>
+                  <Box className="form-container" sx={{ width: "50%" }}>
+                    <Grid container marginBottom={1}>
+                      <Grid item padding={1} xs={12} ml={2} fontWeight={500}>
+                        <TextField
+                          label="From"
+                          placeholder="Enter Source"
+                          onChange={(e) => setFrom(e.target.value)}
+                          variant="standard"
+                          fullWidth
+                          required
+                        />
+                      </Grid>
+                      <Grid item padding={1} xs={12} ml={2}>
+                        <TextField
+                          label="To"
+                          placeholder="Enter Destination"
+                          onChange={(e) => setTo(e.target.value)}
+                          variant="standard"
+                          fullWidth
+                          required
+                        />
+                      </Grid>
+                    </Grid>
+                  </Box>
 
-                    <div className="form-1">
-                      <div className="text" style={{ marginTop: "25px" }}>
-                        TO
-                      </div>
-                      <div className="source-part">ENTER DESTINATION</div>
-                    </div>
-
-                    <div
-                      className="text-1"
-                      style={{
-                        paddingTop: "20px",
-                        marginLeft: "10px",
-                        fontWeight: "400",
-                        fontSize: "16px",
-                      }}
-                    >
-                      Travel Date
-                    </div>
-                    <div
-                      className="source-part"
-                      style={{
-                        marginLeft: "10px",
-                        color: "black",
-                        fontSize: "18px",
-                      }}
-                    >
-                      Jan 30,2024
-                    </div>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "500",
+                      color: "grey",
+                      marginTop: "20px",
+                    }}
+                   
+                  >
+                    Travel Date
                   </div>
-                </div>
 
-                <div className="travel">
+                  <div className="travel">
                   <div>
                     {" "}
                     <img
@@ -63,21 +86,29 @@ const Bus = () => {
                   in select buses.
                   <span style={{ color: "blue" }}>Know More</span>
                 </div>
+                
+                <button className="search-bus" type="submit" >SEARCH BUS</button>
+                </form>
+               
               </div>
               <div className="bus-item-2">
                 <div className="green-div">
+                  <div className="vaccine-img">
+                    <div className="vaccine-div">
+                      <img src="https://gos3.ibcdn.com/vacc-1642578631.png" />
+                      Buses with vaccination Mandatory
+                    </div>
+                    <div className="paragraph">
+                      Travel on buses that mandate covid vaccination{" "}
+                    </div>
+                  </div>
+                </div>
 
-                  <div className="vaccine-img"> 
-                   
-                  <div className="vaccine-div">
-                  <img  src="https://gos3.ibcdn.com/vacc-1642578631.png"/>
-                    Buses with vaccination Mandatory</div>
-                <div className="paragraph">Travel on buses that mandate covid vaccination </div>
-                </div>
-                </div>
-               
                 <div className="blue-div">
-                  <div className="bus-card-page" style={{backgroundColor:"white", borderRadius:"20px"}}>
+                  <div
+                    className="bus-card-page"
+                    style={{ backgroundColor: "white", borderRadius: "20px" }}
+                  >
                     <img src="https://gos3.ibcdn.com/img-1701838393.jpg" />
                     <div
                       className="part-1"
@@ -92,14 +123,17 @@ const Bus = () => {
                         marginLeft: "30px",
                         fontSize: "14px",
                         marginTop: "10px",
-                        paddingBottom: "20px"
+                        paddingBottom: "20px",
                       }}
                     >
                       Valid till: Limited Period Offer
                     </div>
                   </div>
 
-                  <div className="bus-card-page" style={{backgroundColor:"white", borderRadius:"20px"}}>
+                  <div
+                    className="bus-card-page"
+                    style={{ backgroundColor: "white", borderRadius: "20px" }}
+                  >
                     <img src="https://gos3.ibcdn.com/img-1705898510.jpg" />
                     <div
                       className="part-1"
@@ -123,7 +157,7 @@ const Bus = () => {
               </div>
             </div>
           </div>
-          <div className="search-bus">SEARCH BUS</div>
+      
         </div>
       </div>
     </div>
@@ -131,3 +165,5 @@ const Bus = () => {
 };
 
 export default Bus;
+
+//

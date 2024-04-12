@@ -1,0 +1,28 @@
+.searchtrain-page{
+    background-color: orange;
+    width: 300vh;
+    height: 100px;
+    display: flex;
+
+}
+.nav-search-train{
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    gap: 5%;
+   padding-top: 10px;
+}
+.update-btn{
+    background-color: white;
+    border-radius: 10px;
+    width: 250px;
+    height: 40px;
+    margin-left: 10%;
+    margin-top: 30px;
+    color: blue;
+    font-weight: 700;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 6px;
+}

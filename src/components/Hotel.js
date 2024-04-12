@@ -1,29 +1,28 @@
-import React, { useState} from "react";
+import React, { useState,useContext} from "react";
 import "../styles/Hotel.css";
 import searchImage from "../assets/search.png";
 import { useNavigate } from "react-router-dom";
+import { Box, Grid, TextField } from "@mui/material";
+import HotelContext from "./HotelContext";
+
 
 
 const Hotel = () => {
   const[hotel,setHotel] = useState("")
 
-  const hotelSearch = async () => {
-    const response = await fetch(
-      `https://academics.newtonschool.co/api/v1/bookingportals/hotel?search={"location":"Del"}`,
-      {
-        headers: { projectID: "9hpv8qj9o596" },
-      }
-    );
-    const results = await response.json();
-    console.log(results);
+  const[from,setFrom] = useState("")
 
-    setHotel(results.data.hotels);
+  const { setLocation } = useContext(HotelContext);
 
-  }
   const navigate = useNavigate();
 
+  const handleSubmit = async(e) => {
+     e.preventDefault()
+  }
+
    const Hotels = () => {
-      hotelSearch();
+    setLocation(from)
+     
       navigate("/searchHotels")
    }
   
@@ -65,12 +64,23 @@ const Hotel = () => {
                   International
                 </div>
               </div>
-              <div className="item">Where</div>
+              {/* <div className="item">Where</div> */}
               <div className="item-cards">
                 <img src={searchImage} alt="search" />
-                <div className="aerocity" style={{ marginTop: "6px" }}>
-                  Aerocity, Delhi
-                </div>
+                <form  >
+               <Box>
+               <Grid>
+               <TextField
+                          label="Where"
+                          placeholder="Enter Source"
+                          onChange={(e) => setFrom(e.target.value)}
+                          variant="standard"
+                          fullWidth
+                          required
+                        />
+               </Grid>
+               </Box>
+               </form>
               </div>
               <div className="checkin">
                 <div className="first">
@@ -80,13 +90,13 @@ const Hotel = () => {
                 <div className="first-part">
                   <div className="button">1 Night</div>
                   <div className="second">
-                    <div className="item-cards-1">Check-out</div>
-                    <div className="item-cards-2">Dec 13,2023</div>
+                    <div className="item-cards-11">Check-out</div>
+                    <div className="item-cards-21">Dec 13,2023</div>
                   </div>
                 </div>
               </div>
               <div className="item-cards-3">Guests & Rooms</div>
-              <div className="item-cards-2">2 Adults | 1 Room</div>
+              <div className="item-cards-22">2 Adults | 1 Room</div>
             </div>
           </div>
 

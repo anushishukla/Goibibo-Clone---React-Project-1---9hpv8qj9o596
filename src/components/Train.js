@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Train.css";
+import { Box, Grid, TextField } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 // import "../styles/newTrain.css";
 
 const Train = () => {
+const[from,setFrom] = useState("")
+const[to,setTo] = useState("")
+
+const navigate = useNavigate()
+
+  const handleForm = async(e) => {
+    e.preventDefault()
+     setFrom(from)
+     setTo(to)
+
+     navigate("/searchTrain")
+  }
   return (
     <div>
       <div className="wave">
@@ -44,12 +58,21 @@ const Train = () => {
             </div>
           </div>
           <div className="content-data-mid">
-            <div>
-              <input className="trip-information" type="text"></input>From
-            </div>
-            <div>
-              <input className="trip-information" type="text"></input>To
-            </div>
+          <form onSubmit={handleForm}>
+            <Box  sx={{display:"flex", gap:"20px"}}>
+              <Grid >
+                <TextField label="From" placeholder="Enter source" onChange={(e) => setFrom(e.target.value)} fullWidth required/>
+              </Grid>
+              <Grid>
+                <TextField label="To" placeholder="Enter destination" onChange={(e) => setTo(e.target.value)} fullWidth required/>
+              </Grid>
+            <button style={{height:"20px", fontSize:"10px", borderRadius:"5px", backgroundColor:"green", color:"white"}}>TATKAL OPEN</button>
+            <button style={{height:"20px", fontSize:"10px", borderRadius:"5px", backgroundColor:"green", color:"white"}}>TATKAL OPEN</button>
+            <button style={{height:"20px", fontSize:"10px", borderRadius:"5px", backgroundColor:"green", color:"white"}}>TATKAL OPEN</button>
+          
+            </Box>
+            <button className="search-train" >SEARCH TRAIN</button>
+            </form>
           </div>
         </div>
       </div>

@@ -1,0 +1,142 @@
+.searchbus-page{
+    background-color: rgb(109, 109, 243);
+    width: 300vh;
+    height: 100px;
+    display: flex;
+
+}
+.nav-search-bus{
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    gap: 5%;
+   padding-top: 10px;
+}
+.update-btn{
+    background-color: white;
+    border-radius: 10px;
+    width: 250px;
+    height: 50px;
+    margin-left: 10%;
+    margin-top: 20px;
+    color: blue;
+    font-weight: 700;
+    text-align: center;
+    font-size: 18px;
+    /* padding-top: 5px; */
+}
+.fr-1{
+    width: 220px;
+    height: 30px;
+    /* background-color: rgb(23, 23, 124); */
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+  .fr-2{
+    width: 220px;
+    height: 30px;
+    /* background-color: rgb(23, 23, 124); */
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+  .fr-3{
+    width: 220px;
+    height: 30px;
+    /* background-color: rgb(23, 23, 124); */
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+  .l1{
+    margin-left: 20px;
+  }
+  .l2{
+    margin-left: 20px;
+  }
+  .l3{
+    margin-left: 20px;
+  }
+  .bus-bus-filter{
+    background-color: rgb(243, 232, 232);
+    width: 300px;
+    height: 100vh;
+    /* margin-left: 20px; */
+    /* margin-top: 30px; */
+    border-radius: 5px;
+  }
+  .reset-bus{
+    margin-top: 20px;
+    margin-left: 50%;
+    color: gray;
+  }
+  .bus-result-page{
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+  }
+  .bus-page-container{
+    display: grid;
+    grid-template-columns: 1.5fr 4.5fr;
+    grid-gap: 2rem;
+    width: 80%;
+  }
+  .hr-container-map{
+    display: flex;
+    flex-direction: column;
+  }
+  .bus-card {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 2fr 2fr;
+    width: 110%;
+    background-color: rgb(243, 232, 232);
+    border-radius: 12px;
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .bus-card:hover{
+    border: 2px solid blue;
+}
+  
+  .bus-text1 {
+    font-size: 12px;
+    color: gray;
+  }
+  
+  .bus-ratingTag {
+    color: white;
+    padding: 4px 8px;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 4px;
+    background-color: rgb(12, 177, 12);
+    width: 20px;
+  }
+  
+  .bus-fare {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .select-bus {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  
+  .selectBus-btn {
+    color: white;
+    background-color: #f18125;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .footer{
+    background-color: rgb(241, 233, 233);
+  }
+  .footer-path p:hover{
+    color: red;
+  }

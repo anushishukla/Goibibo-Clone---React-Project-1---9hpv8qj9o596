@@ -1,32 +1,32 @@
-.bus-bg {
+.cab-bg {
   
-    background-color: rgb(81, 81, 235);
+    background-color: orange;
     width: 150vh;
     height: 65vh;
     border-radius: 0 0 150vh 150vh;
-    margin-left: -10vh;
+    /* margin-left: -10vh; */
     position: absolute;
   }
-  .bus-bg-1{
+  .cab-bg-1{
     background-color: lightgray;
   }
-  .bus-page {
+  .cab-page {
     position: relative;
     width: 150vh;
     margin-left: -10vh;
   }
-  .hotel-item {
+  .cab-item {
     color: white;
     padding-top: 10px;
     font-weight: 700;
     font-size: 22px;
   }
-  .card-bus {
-    width: 700px;
+  .card-cab {
+    width: 500px;
     height: 350px;
     border-radius: 10px;
     background-color: white;
-    margin-left: 10%;
+    margin-left: 15%;
     margin-top: 25px;
     box-shadow: 2px 2px 2px ;
   }
@@ -38,7 +38,7 @@
     font-size: 18px;
     font-weight: 700;
   }
-  .hotel-part-top{
+  .cab-part-top{
     gap: 20px;
   }
   .form-1{
@@ -53,34 +53,21 @@
   }
   .source-part{
     font-weight: 700;
-     font-size: 16px;
-    padding-top: 10px;
-
-  }
-  .travel{
-    display: flex;
-    padding-top: 50px;
-    margin-left: 8%;
-    font-size:14px;
-  }
-  .travel span{
     font-size: 16px;
-    font-weight: 600;
+    padding-top: 10px;
   }
-  .search-bus{
-
+  
+  .search-cab{
   width: 200px;
   border-radius: 25px;
   background-color: orange;
-
   color: white;
-  font-weight: 700;
-  font-size: 20px;
+  font-weight: 750;
+  font-size: 18px;
   margin-left: 30%;
   padding: 15px;
-  /* top: -30px; */
   text-align: center;
-  margin-top: 75px;
+  margin-top: 30%;
   }
   .content {
     width: 75%;
@@ -103,11 +90,11 @@
     gap: 25px;
     font-size: 16px;
   }
-  .bus-item-1{
+  .cab-item-1{
     display: flex;
     flex-direction: row;
   }
-  .bus-item-2{
+  .cab-item-2{
     width: 500px;
     height: 400px;
     display: flex;
@@ -148,7 +135,7 @@
 .vaccine-div img{
   margin-top: 30px;
 }
-.bus-card-page img{
+.cab-card-page img{
   background-color: white;
   width: 250px;
   height: 80px;
@@ -156,30 +143,4 @@
   color: gray;
 }
 
-/* .hotel-page {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
 
-.hotel-container {
-  position: relative;
-}
-
-.hotel-bg {
-  background-color: #2274e0;
-  height: 300px;
-  width: 60%;
-  border-radius: 0% 0% 80% 55%;
-  position: absolute;
-  z-index: -1;
-}
-
-.hotel-heading{
-  color: white;
-}
-
-.hotel-sub-container {
-  position: absolute;
-  margin-left: 120px;
-} */

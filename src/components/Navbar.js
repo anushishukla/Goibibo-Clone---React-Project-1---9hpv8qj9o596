@@ -7,9 +7,7 @@ import hotelImage from "../assets/hotel.png";
 import trainImage from "../assets/train.png";
 import cabImage from "../assets/cab.png";
 import busImage from "../assets/bus.png";
-import holidayImage from "../assets/holiday.png";
-import forexImage from "../assets/forex.png";
-import insauranceImage from "../assets/insaurance.png";
+
 
 const Navbar = () => {
 
@@ -49,20 +47,8 @@ const Navbar = () => {
           <NavLink to={`/bus`}>Bus</NavLink>
         </li>
 
-        <li className="nav-items">
-          <img src={holidayImage} alt="holiday" />
-          <NavLink to={`/holiday`}>Holidays</NavLink>
-        </li>
 
-        <li className="nav-items">
-          <img src={forexImage} alt="forex" />
-          <NavLink to={`/forex`}>Forex</NavLink>
-        </li>
-
-        <li className="nav-items">
-          <img src={insauranceImage} alt="insaurance" />
-          <NavLink to={`/insaurance`}>Insaurance</NavLink>
-        </li>
+       
       </ul>
 
       <div className="myTrip-nav-items">
