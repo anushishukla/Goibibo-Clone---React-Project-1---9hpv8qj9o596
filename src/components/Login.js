@@ -1,107 +1,99 @@
 import React, { useState } from "react";
-import {URL, APP_TYPE, PROJECT_ID} from "./Constant"
+
 import "../styles/Login.css";
 import { Box, Grid, TextField } from "@mui/material";
+import CloseIcon from '@mui/icons-material/Close';
 
 const Login = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const [mobileNumber, setMobileNumber] = useState('');
+  const [isValidMobile, setIsValidMobile] = useState(false);
 
-    try {
-        const user = {
-            name,
-            email,
-            password,
-            appType : APP_TYPE,
-        };
-        const response = await fetch(URL, {
-            method : 'POST',
-            headers : {
-                projectID : PROJECT_ID,
-                "Content-Type" : "application/json",
-            },
-            body: JSON.stringify({...user})
-        });
-        if(!response.ok){
-            alert ('Signup Failed')
-            return;
-        }
-        console.log(response.token)
-        const token = localStorage.setItem('token',JSON.stringify(response.token))
-        
-        alert ('Signup Done');
-    } catch (error) {
-        
-    }
+
+  const handleMobileNumberChange = (event) => {
+    const number = event.target.value;
+    setMobileNumber(number);
+   
+    setIsValidMobile(validateMobileNumber(number));
   };
 
-  const handleUserName = (e) => {
-    setName(e.target.value);
+
+  
+  const validateMobileNumber = (number) => {
+    return /^\d{10}$/.test(number); 
   };
 
-  const handleUserEmail = (e) => {
-    setEmail(e.target.value);
-  };
-  const handleUserPassword = (e) => {
-    setPassword(e.target.value);
+  
+  const handleContinue = () => {
+   
+    console.log('Continue clicked');
   };
   return (
-
     <>
-<div>
-    <div className="login-bg">
-      
-     <div className="benefits">
-      <h1>UNLOCK THESE BENEFITS</h1>
-      <form onSubmit={handleSubmit}>
-        <label>Name</label>
-        <inpput
-          type="text"
-          name="name"
-          value={name}
-          onChange={handleUserName}
-        />
+      <div>
+        <div className="login-bg">
+    
+          <div className="benefits">
+            <p>UNLOCK THESE BENEFITS</p>
+          </div>
 
-        <label>Email</label>
-        <inpput
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleUserEmail}
-        />
+         <div className="log-earn">
+          <p style={{fontSize:"16px", fontWeight:"600", marginTop:"20px"}}>Earn goCash</p>
+          <p style={{fontSize:"13px"}}>₹100 on Sign Up & Cashback on Bookings</p>
+          </div>
 
-        <label>Password</label>
-        <inpput
-          type="password"
-          name="password"
-          value={password}
-          onChange={handleUserPassword}
-        />
-        <button type="submit">Register</button>
-      </form>
+          <div className="log-earn">
+          <p style={{fontSize:"16px", fontWeight:"600", marginTop:"20px"}}>Loyalty Benefits</p>
+          <p style={{fontSize:"13px"}}>Extra Discounts, Free Seat Selection etc</p>
+          </div>
+
+          <div className="log-earn">
+          <p style={{fontSize:"16px", fontWeight:"600", marginTop:"20px"}}>Exclusive Offers</p>
+          <p style={{fontSize:"13px"}}>Daily Steal Deals & Special Discounts</p>
+          </div>
+
+          <div className="log-earn-bottom">
+          <div style={{fontSize:"16px", fontWeight:"600", marginTop:"40px"}}>FLAT 12% OFF*</div>
+          <div style={{fontSize:"13px", marginTop:"5px"}}>on your first Flight booking</div>
+          </div>
+
+        </div>
       </div>
-    </div>
-    </div>
-  <div >
-    <div className="login-2" >
-        <div className="login-foot">Login/Signup</div>
 
-        <Box>
-          <Grid>
-            <TextField label="Number" placeholder="enter number" variant="standard" fullWidth required>
-              
-            </TextField>
-          </Grid>
-        </Box>
-        <div className="continue">Continue</div>
-        
-    </div>
-    </div>
-     </>
+
+      <div>
+        <div className="login-2">
+        <div className="cross-icon">
+            <CloseIcon/>
+          </div>
+          <div className="login-foot">Login/Signup</div>
+
+          <Box>
+            <Grid>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginTop: "20px",
+                }}
+              >
+                <TextField
+                  label="Enter Your Mobile Number"
+                  placeholder="+ 91 - "
+                  variant="outlined"
+                  value={mobileNumber}
+                  onChange={handleMobileNumberChange}
+                  required
+                  sx={{ width: 250 }}
+                ></TextField>
+              </div>
+            </Grid>
+          </Box>
+          <button disabled={!isValidMobile} onClick={handleContinue} className="continue">Continue</button>
+        </div>
+      </div>
+    </>
   );
 };
 

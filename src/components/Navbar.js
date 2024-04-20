@@ -37,10 +37,10 @@ const Navbar = () => {
           <NavLink to={`/train`}>Trains</NavLink>
         </li>
 
-        <li className="nav-items">
+        {/* <li className="nav-items">
           <img src={cabImage} alt="cab" />
           <NavLink to={`/cab`}>Cabs</NavLink>
-        </li>
+        </li> */}
 
         <li className="nav-items">
           <img src={busImage} alt="bus" />
@@ -61,3 +61,17 @@ const Navbar = () => {
   );
 };
 export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

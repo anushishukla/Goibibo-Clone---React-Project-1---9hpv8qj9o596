@@ -22,11 +22,11 @@
     font-size: 24px;
     font-weight: 700;
     margin-left: 20%;
-    margin-top: 35px;
+    margin-top: 10px;
 }
 .continue{
     text-align: center;
-    margin-top: 15%;
+    margin-top: 10%;
     background-color: rgb(153, 153, 184);
     width: 200px;
     margin-left: 15%;
@@ -35,8 +35,21 @@
     color: white;
     font-weight: 500;
 }
-.benefits h1{
-    font-size: 16px;
-    margin-left: 35px;
+.benefits p{
+    font-size: 14px;
+    margin-left: 20px;
     margin-top: 20px;
+    font-weight: 400;
+}
+.log-earn{
+    margin-left: 10%;
+    font-size: 14px;
+}
+.log-earn-bottom{
+    margin-left: 30px;
+}
+.cross-icon{
+   margin-left: 90%;
+   margin-top: 20px;
+   color: gray;
 }

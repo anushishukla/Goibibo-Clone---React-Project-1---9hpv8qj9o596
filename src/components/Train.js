@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../styles/Train.css";
 import { Box, Grid, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import TrainContext from "./TrainContext";
+
 // import "../styles/newTrain.css";
 
 const Train = () => {
 const[from,setFrom] = useState("")
 const[to,setTo] = useState("")
+
+const { setSource, setDestination } = useContext(TrainContext);
+
 
 const navigate = useNavigate()
 
