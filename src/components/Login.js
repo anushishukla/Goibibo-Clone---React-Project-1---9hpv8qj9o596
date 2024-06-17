@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Login.css";
 import { Box, Grid, TextField } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
@@ -7,21 +7,22 @@ const Login = () => {
   const [mobileNumber, setMobileNumber] = useState('');
   const [isValidMobile, setIsValidMobile] = useState(false);
 
-  const handleMobileNumberChange = (event) => {
-    const number = event.target.value.trim();
-    setMobileNumber(number);
 
-    const valid = validateMobileNumber(number);
-    setIsValidMobile(valid);
+  const loginPage = async () => {
+    const response = await fetch(
+      `https://academics.newtonschool.co/api/v1/bookingportals/signup`,
+      {
+        headers: { projectID: "9hpv8qj9o596" },
+      }
+    );
+    const result = await response.json();
+    console.log(result);
+    
   };
-
-  const validateMobileNumber = (number) => {
-    return /^\d{10}$/.test(number);
-  };
-
-  const handleContinue = () => {
-    console.log('Continue clicked');
-  };
+  useEffect(() => {
+    loginPage();
+  }, []);
+  
 
   return (
     <>
@@ -67,14 +68,14 @@ const Login = () => {
                 label="Enter Your Mobile Number"
                 variant="outlined"
                 value={mobileNumber}
-                onChange={handleMobileNumberChange}
+         
                 required
                 sx={{ width: 250 }}
               ></TextField>
             </div>
           </Grid>
         </Box>
-        <button disabled={!isValidMobile} onClick={handleContinue} className="continue">Continue</button>
+        <button className="continue">Continue</button>
       </div>
     </>
   );
